@@ -24,8 +24,8 @@ class ShoppingActivity : AppCompatActivity(), KodeinAware {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping)
 
-        viewModel = ViewModelProviders.of(this, factory).get(ShoppingViewModel::class.java)
-
+        viewModel = ViewModelProvider(this,factory).get(ShoppingViewModel::class.java)
+        
         val adapter = ShoppingItemAdapter(listOf(), viewModel)
 
         rvShoppingItems.layoutManager = LinearLayoutManager(this)
